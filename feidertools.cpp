@@ -5,7 +5,7 @@ namespace fdr
 
 	void split_string(const std::string& str, std::string & left, std::string & right, const std::string & delim)
 	{
-		unsigned int pos = str.find(delim);
+		size_t pos = str.find(delim);
 
 		if ( std::string::npos == pos )
 		{
@@ -14,8 +14,12 @@ namespace fdr
 			return;
 		}
 
+
 		left = str.substr(0, pos);
 		right = str.substr(pos+1);
+
+
+		//std::cout<<left<<" - "<<pos<<" - "<<right<<std::endl;
 	}
 
 	void swap_pointers(void * a, void * b)

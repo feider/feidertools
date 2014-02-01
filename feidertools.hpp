@@ -3,6 +3,9 @@
 #include <cstring>
 #include <vector>
 
+#ifndef FEIDERTOOLS_H
+#define FEIDERTOOLS_H
+
 namespace fdr
 {
 
@@ -59,3 +62,5 @@ namespace fdr
 	};
 
 }
+
+#endif

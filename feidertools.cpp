@@ -14,9 +14,9 @@ namespace fdr
 			return;
 		}
 
-
+		size_t pos_r = pos + delim.length();
 		left = str.substr(0, pos);
-		right = str.substr(pos+1);
+		right = str.substr(pos_r);
 
 
 		//std::cout<<left<<" - "<<pos<<" - "<<right<<std::endl;

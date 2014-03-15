@@ -15,7 +15,12 @@ namespace fdr
 
 	std::vector<std::string> tokenise(const std::string & str, const std::string & delim);
 
+	bool str_equals(const std::string & left, const std::string & right);
+	bool str_contains(const std::string & container, const std::string & sequence);
 
+
+	std::string to_string(const std::vector<std::string> & input_vector);
+	std::string to_string(const std::vector<std::string> & input_vector, const std::string & delim);
 
 
 

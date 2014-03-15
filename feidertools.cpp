@@ -2,6 +2,24 @@
 
 namespace fdr
 {
+	std::string to_string(const std::vector<std::string> & input_vector)
+	{
+		return to_string(input_vector, "");
+	}
+
+	std::string to_string(const std::vector<std::string> & input_vector, const std::string & delim)
+	{
+		std::vector<std::string> temp_vector = input_vector;
+		std::string return_string = "";
+		for(std::vector<std::string>::iterator it = temp_vector.begin(); it != temp_vector.end(); it++)
+		{
+			return_string += *it;
+			return_string += delim;
+		}
+		return return_string;
+	}
+
+
 
 	void split_string(const std::string& str, std::string & left, std::string & right, const std::string & delim)
 	{
@@ -27,6 +45,19 @@ namespace fdr
 		void * temp = b;
 		b = a;
 		a = temp;
+
+
+	}
+
+	bool str_equals(const std::string & left, const std::string & right)
+	{
+		return (0 == left.compare(right));
+	}
+
+
+	bool str_contains(const std::string & container, const std::string & sequence)
+	{
+		return (std::string::npos != container.find(sequence));
 	}
 
 	std::vector<std::string> tokenise(const std::string & str, const std::string & delim)

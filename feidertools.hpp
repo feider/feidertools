@@ -26,30 +26,43 @@ namespace fdr
 
 
 
-	/*
+	/*!
+	 * \brief Elements of a Sorted_Vector
+	 *
 	 * Objects that can be stored in the sorted vector
 	 * should be derived from this class
 	 * the sort_val must be set for the sorted vector
 	 * to sort by
 	 */
-
 	class Storeable
 	{
 	private:
-		unsigned int * sort_val;
+		unsigned int * sort_val;	// A pointer to the Value the object is sorted by
 	public:
+
+		/*!
+		 * Determine the value the object is sorted by
+		 * @param[in] sort_by A pointer to the value the object is sorted by
+		 */
 		void sort_by(unsigned int * sort_by);
+
+		/*!
+		 * Determine the value the object is sorted by
+		 * @return The value the Object is sorted by as an unsigned integer
+		 */
 		unsigned int get_sort_val();
 	};
 
-	/* This data structure stores a sorted vector
+	/*!
+	 * \brief Stores Storeables
+	 *
+	 * This data structure stores a sorted vector
 	 * new elements are automatically inserted
 	 * sorted by storeable->get_sort_val()
 	 * The user can determine from where the new element is inserted
 	 * depending on the application it could be useful
 	 * to search from the beginning, the end or the middle
 	 */
-
 	class Sorted_Vector
 	{
 	protected:
@@ -65,6 +78,28 @@ namespace fdr
 		void insert(Storeable * storeable, std::vector<Storeable*>::iterator position);
 
 	};
+
+
+	/*!
+	 * \brief Stores command line parameters
+	 *
+	 * This class can store command line parameters,
+	 * check if certain parameters are there
+	 * and return the value of a parameter if given
+	 */
+	class Parameters
+	{
+	private:
+		std::vector<std::string> parameters;
+	public:
+
+
+		
+		Parameters(int argc, char ** argv);
+		bool has(const std::string & parameter);
+		std::string value(const std::string & parameter);
+	};
+
 
 }
 

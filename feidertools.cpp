@@ -140,4 +140,46 @@ namespace fdr
 	}
 
 
+
+
+
+	Parameters::Parameters(int argc, char ** argv)
+	{
+		for(int i = 0; i<argc; i++)
+		{
+			this->parameters.push_back(argv[i]);
+		}
+	}
+
+	bool Parameters::has(const std::string & parameter)
+	{
+		for(std::vector<std::string>::iterator it = this->parameters.begin(); it != this->parameters.end(); it++)
+		{
+			if(str_equals(*it, parameter))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	std::string Parameters::value(const std::string & parameter)
+	{
+		for(std::vector<std::string>::iterator it = this->parameters.begin(); it != this->parameters.end(); it++)
+		{
+			if(str_equals(*it, parameter))
+			{
+				return *it;
+			}
+		}
+		return "";
+	}
+
+
+
+
+
+
+
+
 }

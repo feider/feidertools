@@ -79,9 +79,9 @@ namespace fdr
 	}
 
 
-	void Storeable::sort_by(unsigned int * sort_by)
+	void Storeable::sort_by(unsigned int * sort_val)
 	{
-		this->sort_val = sort_by;
+		this->sort_val = sort_val;
 	}
 
 	unsigned int Storeable::get_sort_val()

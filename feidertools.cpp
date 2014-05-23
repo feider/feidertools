@@ -1,5 +1,5 @@
 #include "feidertools.hpp"
-
+#include <cstring>
 namespace fdr
 {
 	std::string to_string(const std::vector<std::string> & input_vector)
@@ -141,45 +141,35 @@ namespace fdr
 
 
 
-
-
-	Parameters::Parameters(int argc, char ** argv)
+	int replace_char(std::string & input_string, char c, char new_c)
 	{
-		for(int i = 0; i<argc; i++)
-		{
-			this->parameters.push_back(argv[i]);
-		}
+		char to_chars[input_string.length()];
+		strcpy(to_chars, input_string.c_str());
+
+		int counter = replace_char(to_chars, c, new_c);
+
+		input_string = to_chars;
+
+		return counter;
 	}
 
-	bool Parameters::has(const std::string & parameter)
+	int replace_char(char * input_string, char c, char new_c)
 	{
-		for(std::vector<std::string>::iterator it = this->parameters.begin(); it != this->parameters.end(); it++)
+		int counter = 0;
+		int i = 0;
+		char current = input_string[i];
+		while(current != '\0')
 		{
-			if(str_equals(*it, parameter))
+			if(current == c)
 			{
-				return true;
+				counter++;
+				input_string[i] = new_c;
 			}
+			i++;
+			current = input_string[i];
 		}
-		return false;
+		return counter;
 	}
-
-	std::string Parameters::value(const std::string & parameter)
-	{
-		for(std::vector<std::string>::iterator it = this->parameters.begin(); it != this->parameters.end(); it++)
-		{
-			if(str_equals(*it, parameter))
-			{
-				return *it;
-			}
-		}
-		return "";
-	}
-
-
-
-
-
-
 
 
 }

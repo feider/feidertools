@@ -6,8 +6,33 @@
 #ifndef FEIDERTOOLS_H
 #define FEIDERTOOLS_H
 
+
+/** @file
+	*@brief This is the feidertools header file
+	*/
+
+/// The feidertools namspace
 namespace fdr
 {
+
+	/**
+		* Replaces every matching character in the input string with the new one
+		* @param input_string The input string
+		* @param c The old character
+		* @param new_c The new character
+		*/
+	int replace_char(std::string & input_string, char c, char new_c);
+
+
+
+	/**
+		* Replaces every matching character in the input character array with the new one
+		* @param input_string The input character array
+		* @param c The old character
+		* @param new_c The new character
+		*/
+	int replace_char(char * input_string, char c, char new_c);
+
 
 	void split_string(const std::string& str, std::string & left, std::string & right, const std::string & delim);
 
@@ -26,43 +51,30 @@ namespace fdr
 
 
 
-	/*!
-	 * \brief Elements of a Sorted_Vector
-	 *
+	/*
 	 * Objects that can be stored in the sorted vector
 	 * should be derived from this class
 	 * the sort_val must be set for the sorted vector
 	 * to sort by
 	 */
+
 	class Storeable
 	{
 	private:
-		unsigned int * sort_val;	// A pointer to the Value the object is sorted by
+		unsigned int * sort_val;
 	public:
-
-		/*!
-		 * Determine the value the object is sorted by
-		 * @param[in] sort_by A pointer to the value the object is sorted by
-		 */
 		void sort_by(unsigned int * sort_by);
-
-		/*!
-		 * Determine the value the object is sorted by
-		 * @return The value the Object is sorted by as an unsigned integer
-		 */
 		unsigned int get_sort_val();
 	};
 
-	/*!
-	 * \brief Stores Storeables
-	 *
-	 * This data structure stores a sorted vector
+	/* This data structure stores a sorted vector
 	 * new elements are automatically inserted
 	 * sorted by storeable->get_sort_val()
 	 * The user can determine from where the new element is inserted
 	 * depending on the application it could be useful
 	 * to search from the beginning, the end or the middle
 	 */
+
 	class Sorted_Vector
 	{
 	protected:
@@ -78,28 +90,6 @@ namespace fdr
 		void insert(Storeable * storeable, std::vector<Storeable*>::iterator position);
 
 	};
-
-
-	/*!
-	 * \brief Stores command line parameters
-	 *
-	 * This class can store command line parameters,
-	 * check if certain parameters are there
-	 * and return the value of a parameter if given
-	 */
-	class Parameters
-	{
-	private:
-		std::vector<std::string> parameters;
-	public:
-
-
-		
-		Parameters(int argc, char ** argv);
-		bool has(const std::string & parameter);
-		std::string value(const std::string & parameter);
-	};
-
 
 }
 

@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -63,7 +64,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>fdr</b></li><li class="navelem"><a class="el" href="classfdr_1_1Storeable.html">Storeable</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacefdr.html">fdr</a></li><li class="navelem"><a class="el" href="classfdr_1_1Storeable.html">Storeable</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -93,63 +93,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">fdr::Storeable Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Elements of a <a class="el" href="classfdr_1_1Sorted__Vector.html" title="Stores Storeables.">Sorted_Vector</a>.  
- <a href="classfdr_1_1Storeable.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="feidertools_8hpp_source.html">feidertools.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acab49884d7751304942d5a2d73d2032b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfdr_1_1Storeable.html#acab49884d7751304942d5a2d73d2032b">sort_by</a> (unsigned int *sort_by)</td></tr>
+<tr class="memitem:acab49884d7751304942d5a2d73d2032b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acab49884d7751304942d5a2d73d2032b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sort_by</b> (unsigned int *sort_by)</td></tr>
 <tr class="separator:acab49884d7751304942d5a2d73d2032b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0fef834febb6f5eefb62497e3371efb"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfdr_1_1Storeable.html#aa0fef834febb6f5eefb62497e3371efb">get_sort_val</a> ()</td></tr>
+<tr class="memitem:aa0fef834febb6f5eefb62497e3371efb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa0fef834febb6f5eefb62497e3371efb"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>get_sort_val</b> ()</td></tr>
 <tr class="separator:aa0fef834febb6f5eefb62497e3371efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Elements of a <a class="el" href="classfdr_1_1Sorted__Vector.html" title="Stores Storeables.">Sorted_Vector</a>. </p>
-<p>Objects that can be stored in the sorted vector should be derived from this class the sort_val must be set for the sorted vector to sort by </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa0fef834febb6f5eefb62497e3371efb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int fdr::Storeable::get_sort_val </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Determine the value the object is sorted by </p>
-<dl class="section return"><dt>Returns</dt><dd>The value the Object is sorted by as an unsigned integer </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="acab49884d7751304942d5a2d73d2032b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void fdr::Storeable::sort_by </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int *&#160;</td>
-          <td class="paramname"><em>sort_by</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Determine the value the object is sorted by </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">sort_by</td><td>A pointer to the value the object is sorted by </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="feidertools_8hpp_source.html">feidertools.hpp</a></li>
 <li>feidertools.cpp</li>
@@ -157,7 +110,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 15 2014 20:07:45 for feidertools by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 23 2014 11:38:24 for feidertools by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

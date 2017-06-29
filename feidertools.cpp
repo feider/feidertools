@@ -1,5 +1,6 @@
 #include "feidertools.hpp"
 #include <cstring>
+#include <fstream>
 namespace fdr
 {
 	std::string to_string(const std::vector<std::string> & input_vector)
@@ -78,6 +79,46 @@ namespace fdr
 		return return_vector;
 	}
 
+  bool Config::load_config_file(const std::string & name)
+  {
+    std::ifstream file;
+    file.open(name.c_str());
+    bool opened = file.is_open();
+    std::string line;
+    std::vector<std::string> tokens;
+    if(opened)
+    {
+      while (!file.eof())
+      {
+        std::getline(file, line);
+        if (line.find("=")!=line.npos && line.find("#")==line.npos)
+        {
+          tokens = tokenise(line, "=");
+          std::cout<<"key: "<<tokens[0]<<" || value: "<<tokens[1]<<std::endl;
+          this->pairs[tokens[0]]= tokens[1];
+        }
+
+      }
+      file.close();
+    }
+    return opened;
+  }
+
+    int Config::get_int(const std::string & name)
+    {
+      return atoi(this->pairs[name].c_str());
+    }
+    std::string Config::get_string(const std::string & name)
+    {
+      return this->pairs[name];
+    }
+    float Config::get_float(const std::string & name)
+    {
+      return atof(this->pairs[name].c_str());
+    }
+
+    Config::Config()
+    {}
 
 	void Storeable::sort_by(unsigned int * sort_val)
 	{

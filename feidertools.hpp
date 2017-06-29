@@ -2,6 +2,7 @@
 #include <string>
 #include <cstring>
 #include <vector>
+#include <map>
 
 #ifndef FEIDERTOOLS_H
 #define FEIDERTOOLS_H
@@ -56,6 +57,25 @@ namespace fdr
 		* @return a vector of strings
 		*/
 	std::vector<std::string> tokenise(const std::string & str, const std::string & delim);
+
+/**
+  * Class that stores configuration files with name-value pairs
+  */
+class Config
+{
+private:
+  std::map<std::string, std::string> pairs;
+public:
+
+  bool load_config_file(const std::string & name);
+  int get_int(const std::string & name);
+  std::string get_string(const std::string & name);
+  float get_float(const std::string & name);
+
+  Config();
+};
+
+
 
 	/**
 		* Checks if two strings are equal and is completely useless. I could have used "=="...
